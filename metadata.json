@@ -1,0 +1,6 @@
+{
+  "name": "LIAS Laboratory System",
+  "description": "Laboratory Information and Administration System for university research labs, covering public showcases, members, publications, events, equipment workflows, meetings, reports, and administrative dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,251 @@
+--- Page 1 ---
+Page 1 sur 8 
+ 
+Projet JEE 
+Master Data Science & Big Data 
+2025-2026 
+Application Web de gestion du laboratoire 
+LIAS 
+Faculté des Sciences Ben M’Sik – Casablanca 
+ 
+1.        Objectifs du système 
+L’application a pour objectifs de : 
+• Centraliser la gestion du laboratoire LIAS  
+• Assurer la traçabilité des activités scientifiques et administratives  
+• Capitaliser la mémoire du laboratoire (documents, événements, décisions)  
+• Structurer la gestion des membres et des responsabilités  
+• Faciliter la production du rapport annuel obligatoire  
+• Améliorer la collaboration interne et externe  
+2.    Typologie des utilisateurs 
+2.1    Visiteurs (public) 
+• Accès libre sans authentification  
+• Consultation :  
+o Présentation du laboratoire  
+o Équipes  
+o Activités (conférences, séminaires…)  
+o Publications  
+2.2      Membres du laboratoire 
+  A. Membres permanents 
+• Appartiennent officiellement au laboratoire LIAS (même externes à la faculté)  
+• Accès complet selon rôle  
+--- Page 2 ---
+Page 2 sur 8 
+ 
+  B. Membres associés 
+• Appartiennent à un autre laboratoire  
+• Collaborateurs du LIAS  
+     Accès limité : 
+• Consultation  
+• Participation à certains événements  
+• Publications (selon droits)  
+  C. Doctorants 
+• Compte personnel  
+• Accès limité :  
+o Ajouter publications  
+o Consulter publications  
+❌ Aucun accès aux modules internes 
+  D. Retraités 
+• Ancien membres en fin de carrière  
+• Compte gelé  
+  E. Anciens membres 
+• Membres ayant quitté le laboratoire  
+• Compte désactivé mais historique conservé  
+3.      Gestion des profils membres ⭐ 
+Chaque membre possède un profil complet et modifiable : 
+     Informations : 
+• Photo  
+• Nom / prénom  
+• Email  
+• Statut (permanent, associé, doctorant…)  
+• Établissement d’origine  
+• Laboratoire d’origine  
+• Biographie  
+• Centres d’intérêt  
+• Publications  
+• Équipe actuelle  
+--- Page 3 ---
+Page 3 sur 8 
+ 
+     Fonctionnalités : 
+• Modification libre du profil (par le membre)  
+• Consultation des profils des autres membres  
+• Historisation automatique des changements  
+4.              Données temporelles du système ⭐ 
+4.1     Laboratoire 
+• Date de création du laboratoire  
+4.2      Membres 
+• Date de naissance (confidentielle)  
+• Date d’embauche  
+• Date d’affiliation au laboratoire (clé métier)  
+• Historique des affiliations  
+4.3     Historique des affiliations 
+• Un membre peut quitter et revenir  
+• Chaque période est historisée :  
+o Date début  
+o Date fin  
+5.     Gouvernance du laboratoire 
+5.1                         Administrateur système 
+• Gestion technique :  
+o Comptes utilisateurs  
+o Paramétrage  
+o Maintenance  
+5.2                                    Directeur du laboratoire (mandat actif) 
+• Responsable métier  
+• Rôle évolutif selon mandat  
+Responsabilités : 
+• Validation des adhésions  
+--- Page 4 ---
+Page 4 sur 8 
+ 
+• Validation des demandes  
+• Supervision des événements  
+• Pilotage du rapport annuel  
+5.3      Mandats ⭐ 
+• Définissent les périodes de gouvernance  
+• Incluent :  
+o Directeur  
+o Vice-directeur  
+o Chefs d’équipe  
+Historique complet conservé 
+6.           Gestion des demandes d’adhésion ⭐ 
+Fonctionnalités : 
+• Soumission en ligne  
+• Informations complètes (CV, motivation…)  
+Décision : 
+• Acceptée → création de compte  
+• Refusée → notification  
+Gestion : 
+• Uniquement par le directeur en mandat  
+7.     Gestion des rôles et responsabilités 
+⭐ 
+Types : 
+• Directeur  
+• Vice-directeur  
+• Chef d’équipe  
+• Membre d’équipe  
+Règles : 
+• Un membre peut changer de rôle  
+• Aucun changement ne supprime les données  
+• Historique complet des rôles  
+--- Page 5 ---
+Page 5 sur 8 
+ 
+8.       Départ et retraite ⭐ 
+8.1 Retraité 
+• Compte gelé  
+• Historique conservé  
+• Aucun accès actif  
+8.2 Ancien membre 
+• Compte désactivé  
+• Peut éventuellement être réactivé  
+9.              Gestion des événements scientifiques 
+Types : 
+• Conférences  
+• Séminaires  
+• Workshops  
+Fonctionnalités : 
+• Création  
+• Organisation  
+• Archivage par édition  
+• Affectation d’organisateurs  
+10.    Archivage documentaire ⭐ 
+Structuration : 
+Par événement et par date 
+Types de documents : 
+• Demandes de financement  
+• Programmes  
+• Attestations  
+• Rapports  
+• Documents administratifs  
+Fonctionnalités : 
+--- Page 6 ---
+Page 6 sur 8 
+ 
+• Upload  
+• Téléchargement  
+• Recherche  
+• Historisation  
+11.    Rapport d’activité annuel ⭐ 
+Fonctionnalités : 
+• Génération annuelle automatique  
+• Basé sur :  
+o Événements  
+o Publications  
+o Activités  
+Objectif : 
+• Condition pour budget annuel  
+12.              Gestion des publications 
+Fonctionnalités : 
+• Ajout par membres et doctorants  
+• Consultation globale  
+• Classement par :  
+o Auteur  
+o Année  
+o Équipe  
+13.    Communication interne 
+Fonctionnalités : 
+• Discussions entre membres  
+• Échanges par équipe  
+• Discussions liées aux événements  
+14.        Gestion du matériel ⭐ 
+Fonctionnalités : 
+• Suivi des arrivages  
+• Distribution équitable  
+--- Page 7 ---
+Page 7 sur 8 
+ 
+• Historique complet  
+Suivi : 
+• Qui a reçu quoi  
+• Qui n’a pas reçu  
+15.    Gestion des besoins en matériel 
+Fonctionnalités : 
+• Soumission des demandes  
+• Validation par direction  
+• Historique  
+16.               Conventions & collaborations ⭐ 
+Fonctionnalités : 
+• Gestion des partenaires  
+• Création de conventions  
+• Archivage des documents  
+• Suivi des activités associées  
+17.     Procès-verbaux (PV) ⭐ 
+Fonctionnalités : 
+• Création des réunions  
+• Ordre du jour  
+• Upload des PV  
+• Archivage  
+18.     Recherche et consultation 
+• Recherche globale :  
+o Membres  
+o Documents  
+o Événements  
+o Publications  
+19.     Notifications 
+--- Page 8 ---
+Page 8 sur 8 
+ 
+• Événements  
+• Validation demandes  
+• Ajouts de documents  
+20.                  Calendrier 
+• Visualisation des événements  
+• Navigation temporelle  
+21.      Règles générales du système 
+• Aucun membre ne perd ses données  
+• Tout est historisé (rôles, statuts, mandats)  
+• Séparation stricte :  
+o Statut (permanent, associé, etc.)  
+o Rôle (responsabilité)  
+• Toute action importante est traçable  
+• Le système constitue une mémoire institutionnelle complète  
+       Résultat final attendu 
+Une plateforme permettant : 
+• Gestion complète du cycle de vie des membres  
+• Traçabilité totale des décisions  
+• Capitalisation des connaissances  
+• Gestion administrative et scientifique intégrée  
+• Production automatisée du rapport annuel  
+• Organisation structurée du laboratoire 
+-  
+ 

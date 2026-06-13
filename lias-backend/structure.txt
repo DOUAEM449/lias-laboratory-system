@@ -1,0 +1,189 @@
+Structure du dossier
+Le numéro de série du volume est 000001D1 C2A8:B7EE
+C:\USERS\HP\DOWNLOADS\LIAS-LABORATORY-SYSTEM\LIAS-BACKEND\SRC\MAIN\JAVA\COM\LIAS\LIAS_BACKEND
+|   LiasBackendApplication.java
+|   
++---config
++---controller
+|   +---admin
+|   +---auth
+|   +---document
+|   +---equipment
+|   +---event
+|   +---meeting
+|   +---member
+|   +---publication
+|   \---team
++---dto
+|   +---auth
+|   +---document
+|   +---equipment
+|   +---event
+|   +---meeting
+|   +---member
+|   +---publication
+|   +---request
+|   |       AnnualReportCreateRequest.java
+|   |       AnnualReportUpdateRequest.java
+|   |       ConventionCreateRequest.java
+|   |       ConventionUpdateRequest.java
+|   |       DiscussionCreateRequest.java
+|   |       DiscussionUpdateRequest.java
+|   |       DocumentCreateRequest.java
+|   |       DocumentUpdateRequest.java
+|   |       EquipmentCreateRequest.java
+|   |       EquipmentRequestCreateRequest.java
+|   |       EquipmentRequestUpdateRequest.java
+|   |       EquipmentUpdateRequest.java
+|   |       EventCreateRequest.java
+|   |       EventUpdateRequest.java
+|   |       MeetingCreateRequest.java
+|   |       MeetingUpdateRequest.java
+|   |       MemberCreateRequest.java
+|   |       MembershipRequestCreateRequest.java
+|   |       MembershipRequestUpdateRequest.java
+|   |       MemberUpdateRequest.java
+|   |       MessageCreateRequest.java
+|   |       MessageUpdateRequest.java
+|   |       NotificationCreateRequest.java
+|   |       NotificationUpdateRequest.java
+|   |       PartnerCreateRequest.java
+|   |       PartnerUpdateRequest.java
+|   |       PublicationCreateRequest.java
+|   |       PublicationUpdateRequest.java
+|   |       TeamCreateRequest.java
+|   |       TeamUpdateRequest.java
+|   |       
+|   +---response
+|   |       AnnualReportResponse.java
+|   |       ConventionResponse.java
+|   |       DiscussionResponse.java
+|   |       DocumentResponse.java
+|   |       EquipmentRequestResponse.java
+|   |       EquipmentResponse.java
+|   |       EventResponse.java
+|   |       MeetingResponse.java
+|   |       MemberResponse.java
+|   |       MembershipRequestResponse.java
+|   |       MessageResponse.java
+|   |       NotificationResponse.java
+|   |       PartnerResponse.java
+|   |       PublicationResponse.java
+|   |       TeamResponse.java
+|   |       
+|   \---team
++---entity
+|   |   AnnualReport.java
+|   |   Convention.java
+|   |   Discussion.java
+|   |   Document.java
+|   |   Equipment.java
+|   |   EquipmentAssignment.java
+|   |   EquipmentRequest.java
+|   |   Event.java
+|   |   Mandate.java
+|   |   Meeting.java
+|   |   Member.java
+|   |   MembershipRequest.java
+|   |   MemberStatusHistory.java
+|   |   MemberTeamAffiliation.java
+|   |   Message.java
+|   |   Notification.java
+|   |   Partner.java
+|   |   Publication.java
+|   |   PublicationAuthor.java
+|   |   Role.java
+|   |   Team.java
+|   |   
+|   \---enums
+|           ConventionStatus.java
+|           DiscussionScope.java
+|           DocumentType.java
+|           EquipmentRequestStatus.java
+|           EquipmentStatus.java
+|           EventType.java
+|           MandateScope.java
+|           MemberStatus.java
+|           NotificationType.java
+|           PublicationType.java
+|           RequestStatus.java
+|           
++---exception
+|       ResourceNotFoundException.java
+|       
++---mapper
+|       AnnualReportMapper.java
+|       ConventionMapper.java
+|       DiscussionMapper.java
+|       DocumentMapper.java
+|       EquipmentMapper.java
+|       EquipmentRequestMapper.java
+|       EventMapper.java
+|       MeetingMapper.java
+|       MemberMapper.java
+|       MembershipRequestMapper.java
+|       MessageMapper.java
+|       NotificationMapper.java
+|       PartnerMapper.java
+|       PublicationMapper.java
+|       TeamMapper.java
+|       
++---repository
+|       AnnualReportRepository.java
+|       ConventionRepository.java
+|       DiscussionRepository.java
+|       DocumentRepository.java
+|       EquipmentAssignmentRepository.java
+|       EquipmentRepository.java
+|       EquipmentRequestRepository.java
+|       EventRepository.java
+|       MandateRepository.java
+|       MeetingRepository.java
+|       MemberRepository.java
+|       MembershipRequestRepository.java
+|       MemberStatusHistoryRepository.java
+|       MemberTeamAffiliationRepository.java
+|       MessageRepository.java
+|       NotificationRepository.java
+|       PartnerRepository.java
+|       PublicationAuthorRepository.java
+|       PublicationRepository.java
+|       RoleRepository.java
+|       TeamRepository.java
+|       
++---security
++---service
+|   |   AnnualReportService.java
+|   |   ConventionService.java
+|   |   DiscussionService.java
+|   |   DocumentService.java
+|   |   EquipmentRequestService.java
+|   |   EquipmentService.java
+|   |   EventService.java
+|   |   MeetingService.java
+|   |   MemberService.java
+|   |   MembershipRequestService.java
+|   |   MessageService.java
+|   |   NotificationService.java
+|   |   PartnerService.java
+|   |   PublicationService.java
+|   |   TeamService.java
+|   |   
+|   \---impl
+|           AnnualReportServiceImpl.java
+|           ConventionServiceImpl.java
+|           DiscussionServiceImpl.java
+|           DocumentServiceImpl.java
+|           EquipmentRequestServiceImpl.java
+|           EquipmentServiceImpl.java
+|           EventServiceImpl.java
+|           MeetingServiceImpl.java
+|           MemberServiceImpl.java
+|           MembershipRequestServiceImpl.java
+|           MessageServiceImpl.java
+|           NotificationServiceImpl.java
+|           PartnerServiceImpl.java
+|           PublicationServiceImpl.java
+|           TeamServiceImpl.java
+|           
+\---util
