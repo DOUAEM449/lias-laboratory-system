@@ -15,9 +15,13 @@ public interface MembershipRequestMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "submittedAt", ignore = true)
+    @Mapping(target = "reviewedBy", ignore = true)
+    @Mapping(target = "member", ignore = true)
+    @Mapping(target = "reviewedAt", ignore = true)
     void updateEntity(MembershipRequestUpdateRequest request, @MappingTarget MembershipRequest membershipRequest);
 
     @Mapping(source = "reviewedBy.id", target = "reviewedById")
     @Mapping(source = "reviewedBy.firstName", target = "reviewedByName")
+    @Mapping(source = "member.id", target = "memberId")
     MembershipRequestResponse toResponse(MembershipRequest membershipRequest);
 }

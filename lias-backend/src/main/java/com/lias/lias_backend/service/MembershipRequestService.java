@@ -10,6 +10,8 @@ import java.util.UUID;
 public interface MembershipRequestService {
     MembershipRequestResponse create(MembershipRequestCreateRequest request);
     MembershipRequestResponse update(UUID id, MembershipRequestUpdateRequest request);
+    MembershipRequestResponse approve(UUID id, UUID reviewerId, String notes);
+    MembershipRequestResponse reject(UUID id, UUID reviewerId, String notes);
     MembershipRequestResponse getById(UUID id);
     List<MembershipRequestResponse> getAll();
     void delete(UUID id);

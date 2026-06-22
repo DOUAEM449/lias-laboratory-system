@@ -1,5 +1,6 @@
 package com.lias.lias_backend.entity;
 
+import com.lias.lias_backend.converter.MemberStatusConverter;
 import com.lias.lias_backend.entity.enums.MemberStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -66,8 +67,8 @@ public class Member {
     @Column(columnDefinition = "TEXT[]")
     private String[] interests;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Convert(converter = MemberStatusConverter.class)
+    @Column(nullable = false, columnDefinition = "member_status")
     private MemberStatus status = MemberStatus.PERMANENT;
 
     @Column(nullable = false)

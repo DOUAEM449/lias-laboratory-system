@@ -1,11 +1,11 @@
 package com.lias.lias_backend.entity;
 
+import com.lias.lias_backend.converter.RequestStatusConverter;
 import com.lias.lias_backend.entity.enums.RequestStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -30,7 +30,7 @@ public class MembershipRequest {
     @NotBlank
     private String lastName;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     @Email
     @NotBlank
     private String email;
@@ -49,8 +49,8 @@ public class MembershipRequest {
     @NotBlank
     private String motivationLetterUrl;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+  
+    @Column(nullable = false, columnDefinition = "request_status")
     private RequestStatus status = RequestStatus.PENDING;
 
     @ManyToOne(fetch = FetchType.LAZY)

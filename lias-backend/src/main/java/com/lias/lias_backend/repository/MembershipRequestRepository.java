@@ -16,6 +16,7 @@ import java.util.UUID;
 @Repository
 public interface MembershipRequestRepository extends JpaRepository<MembershipRequest, UUID> {
 
+    // Derived queries (OK)
     List<MembershipRequest> findByStatus(RequestStatus status);
 
     Optional<MembershipRequest> findByEmail(String email);
@@ -24,21 +25,60 @@ public interface MembershipRequestRepository extends JpaRepository<MembershipReq
 
     List<MembershipRequest> findByMember(Member member);
 
-    @Query("SELECT mr FROM MembershipRequest mr WHERE mr.status = 'PENDING' ORDER BY mr.submittedAt ASC")
+    // -----------------------------
+    // FIXED JPQL QUERIES (ENUM SAFE)
+    // -----------------------------
+
+    @Query("""
+        SELECT mr
+        FROM MembershipRequest mr
+        WHERE mr.status = com.lias.lias_backend.entity.enums.RequestStatus.PENDING
+        ORDER BY mr.submittedAt ASC
+    """)
     List<MembershipRequest> findPendingRequests();
 
-    @Query("SELECT mr FROM MembershipRequest mr WHERE mr.status IN ('PENDING', 'UNDER_REVIEW') ORDER BY mr.submittedAt ASC")
+    @Query("""
+        SELECT mr
+        FROM MembershipRequest mr
+        WHERE mr.status IN (
+            com.lias.lias_backend.entity.enums.RequestStatus.PENDING,
+            com.lias.lias_backend.entity.enums.RequestStatus.UNDER_REVIEW
+        )
+        ORDER BY mr.submittedAt ASC
+    """)
     List<MembershipRequest> findUnresolvedRequests();
 
-    @Query("SELECT mr FROM MembershipRequest mr WHERE mr.reviewedBy.id = :memberId ORDER BY mr.reviewedAt DESC")
+    @Query("""
+        SELECT mr
+        FROM MembershipRequest mr
+        WHERE mr.reviewedBy.id = :memberId
+        ORDER BY mr.reviewedAt DESC
+    """)
     List<MembershipRequest> findRequestsReviewedByMember(@Param("memberId") UUID memberId);
 
-    @Query("SELECT mr FROM MembershipRequest mr WHERE mr.status = 'APPROVED' AND mr.member.id IS NOT NULL")
+    @Query("""
+        SELECT mr
+        FROM MembershipRequest mr
+        WHERE mr.status = com.lias.lias_backend.entity.enums.RequestStatus.APPROVED
+        AND mr.member.id IS NOT NULL
+    """)
     List<MembershipRequest> findApprovedRequests();
 
-    @Query("SELECT COUNT(mr) FROM MembershipRequest mr WHERE mr.status = 'PENDING'")
+    @Query("""
+        SELECT COUNT(mr)
+        FROM MembershipRequest mr
+        WHERE mr.status = com.lias.lias_backend.entity.enums.RequestStatus.PENDING
+    """)
     Long countPendingRequests();
 
-    @Query("SELECT mr FROM MembershipRequest mr WHERE mr.submittedAt BETWEEN :start AND :end ORDER BY mr.submittedAt DESC")
-    List<MembershipRequest> findRequestsInPeriod(@Param("start") OffsetDateTime start, @Param("end") OffsetDateTime end);
+    @Query("""
+        SELECT mr
+        FROM MembershipRequest mr
+        WHERE mr.submittedAt BETWEEN :start AND :end
+        ORDER BY mr.submittedAt DESC
+    """)
+    List<MembershipRequest> findRequestsInPeriod(
+            @Param("start") OffsetDateTime start,
+            @Param("end") OffsetDateTime end
+    );
 }
