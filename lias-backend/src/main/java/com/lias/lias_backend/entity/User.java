@@ -5,21 +5,19 @@ import lombok.*;
 
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class User {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String name;
-
-    @Column(unique = true)
+    
+    // L'agent jme3 firstName o lastName f champ wahed smito "name"
+    private String name; 
+    
     private String email;
-
     private String password;
 }
