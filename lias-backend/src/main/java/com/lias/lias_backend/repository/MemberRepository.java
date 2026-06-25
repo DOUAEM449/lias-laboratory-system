@@ -18,9 +18,9 @@ public interface MemberRepository extends JpaRepository<Member, UUID> {
 
     List<Member> findByStatus(MemberStatus status);
 
-    List<Member> findByIsActive(Boolean isActive);
+    // List<Member> findByIsActive(Boolean isActive);
 
-    List<Member> findByStatusAndIsActive(MemberStatus status, Boolean isActive);
+    // List<Member> findByStatusAndIsActive(MemberStatus status, Boolean isActive);
 
     List<Member> findByLastNameIgnoreCase(String lastName);
 
@@ -29,9 +29,9 @@ public interface MemberRepository extends JpaRepository<Member, UUID> {
     @Query("SELECT m FROM Member m WHERE LOWER(m.lastName) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR LOWER(m.firstName) LIKE LOWER(CONCAT('%', :searchTerm, '%'))")
     List<Member> searchByName(@Param("searchTerm") String searchTerm);
 
-    @Query("SELECT m FROM Member m WHERE m.isActive = true AND m.status IN ('PERMANENT', 'ASSOCIATED', 'PHD')")
-    List<Member> findActiveMembers();
+    // // @Query("SELECT m FROM Member m WHERE m.isActive = true AND m.status IN ('PERMANENT', 'ASSOCIATED', 'PHD')")
+    // List<Member> findActiveMembers();
 
-    @Query("SELECT m FROM Member m WHERE m.status = 'RETIRED' OR m.status = 'FORMER'")
-    List<Member> findInactiveMembers();
+    // // @Query("SELECT m FROM Member m WHERE m.status = 'RETIRED' OR m.status = 'FORMER'")
+    // List<Member> findInactiveMembers();
 }

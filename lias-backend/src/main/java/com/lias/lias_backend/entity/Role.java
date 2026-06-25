@@ -13,7 +13,7 @@ import java.util.*;
 @AllArgsConstructor
 @Builder
 public class Role {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;

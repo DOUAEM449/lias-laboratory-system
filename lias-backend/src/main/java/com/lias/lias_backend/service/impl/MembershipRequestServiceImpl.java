@@ -61,7 +61,9 @@ public class MembershipRequestServiceImpl implements MembershipRequestService {
 
         MembershipRequest membershipRequest = membershipRequestMapper.toEntity(request);
         log.debug("Persisting new membership request for email={}", request.getEmail());
+        membershipRequest.setStatus(RequestStatus.PENDING);
         MembershipRequest saved = membershipRequestRepository.saveAndFlush(membershipRequest);
+        
         log.info("Membership request created id={}", saved.getId());
         return membershipRequestMapper.toResponse(saved);
     }
@@ -171,17 +173,14 @@ public class MembershipRequestServiceImpl implements MembershipRequestService {
     }
 
     private Member buildMemberFromRequest(MembershipRequest request) {
-        String temporaryPassword = UUID.randomUUID().toString();
-        return Member.builder()
-                .email(request.getEmail())
-                .firstName(request.getFirstName())
-                .lastName(request.getLastName())
-                .phone(request.getPhone())
-                .institution(request.getInstitution())
-                .passwordHash(passwordEncoder.encode(temporaryPassword))
-                .status(MemberStatus.PHD)
-                .isActive(true)
-                .hireDate(LocalDate.now())
-                .build();
-    }
+
+    return Member.builder()
+            .email(request.getEmail())
+            .firstName(request.getFirstName())
+            .lastName(request.getLastName())
+            .phone(request.getPhone())
+            .institution(request.getInstitution())
+            .status(MemberStatus.PHD)
+            .build();
+}
 }

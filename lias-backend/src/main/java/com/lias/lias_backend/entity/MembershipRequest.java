@@ -1,14 +1,18 @@
 package com.lias.lias_backend.entity;
 
-import com.lias.lias_backend.converter.RequestStatusConverter;
+
 import com.lias.lias_backend.entity.enums.RequestStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+
 import java.time.OffsetDateTime;
 import java.util.UUID;
+
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "membership_requests")
@@ -49,7 +53,8 @@ public class MembershipRequest {
     @NotBlank
     private String motivationLetterUrl;
 
-  
+    @Enumerated(EnumType.STRING)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(nullable = false, columnDefinition = "request_status")
     private RequestStatus status = RequestStatus.PENDING;
 

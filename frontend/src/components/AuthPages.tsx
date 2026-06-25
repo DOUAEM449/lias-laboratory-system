@@ -95,25 +95,40 @@ export default function AuthPages({
     }
   };
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!regFirstName || !regLastName || !regEmail || !regMotivation) {
-      alert('Please fill in code alignment mandatory areas.');
-      return;
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(
+      "http://localhost:8080/api/membership-requests",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: regFirstName,
+          lastName: regLastName,
+          email: regEmail,
+          phone: "",
+          institution: "",
+          cvUrl: regCvName || "cv.pdf",
+          motivationLetterUrl: regMotivation || "motivation"
+        })
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Request failed");
     }
 
-    // Register adds a membership log request for admins to approve/reject
-    onAddMembershipRequest({
-      firstName: regFirstName,
-      lastName: regLastName,
-      email: regEmail,
-      title: regTitle,
-      cvFileName: regCvName,
-      motivation: regMotivation
-    });
-
     setRegistrationSubmitted(true);
-  };
+
+  } catch (error) {
+    console.error(error);
+    alert("Error sending request to backend");
+  }
+};
 
   const handleForgotSubmit = (e: React.FormEvent) => {
     e.preventDefault();
