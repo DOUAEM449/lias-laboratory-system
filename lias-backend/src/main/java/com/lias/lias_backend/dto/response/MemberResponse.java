@@ -39,7 +39,7 @@ public class MemberResponse {
 
     private String originLab;
 
-    private List<String> interests;
+    // private List<String> interests;
 
     private MemberStatus status;
 

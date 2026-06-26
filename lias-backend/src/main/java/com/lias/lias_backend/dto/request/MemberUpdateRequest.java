@@ -44,7 +44,7 @@ public class MemberUpdateRequest {
     @Size(max = 255)
     private String originLab;
 
-    private List<String> interests;
+    // private List<String> interests;
 
     private MemberStatus status;
 
